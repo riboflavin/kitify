@@ -3,8 +3,6 @@
 				<div class="container">
 					<ul class="nav pull-left" data-active="<%=@active %>">
 						<li><h3><a href="/"><img src="/images/logo-small.png" id="kitify-navbar-logo"/></a></h3></li>
-<!-- 						<li><a href="http://store.kitify.com" style="color: #95C; font-weight: bold;" target="_blank">Kitify Store</a></li>
- -->						<li class="<%= ("active" if @active == "about") %>"><a href="/about">About</a></li>
 						<li><a href="/new">Start New Kit</a></li>
 					</ul>
 					<ul class="nav pull-right">
@@ -20,6 +18,7 @@
 						</li>
 						<% end %>
 						<li class="<%=("active" if @active == "contact") %>"><a href="/contact">Contact Us</a></li>					
+						<li><a href="http://github.com/riboflavin/kitify">Kitify App Source</a></li>
 					</ul>
 				</div>
 			</div>

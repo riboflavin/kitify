@@ -12,10 +12,6 @@
  
     <%= yield %>
 
-<% unless @bottombar_v == 'hide' %>
-<%= render :partial => "shared/bottombar" %>
-<% end %>
-
 	<%= yield :js %>
 	<script type="text/javascript">
 	  var _gaq = _gaq || [];
