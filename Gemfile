@@ -1,6 +1,6 @@
 source 'http://rubygems.org'
 
-gem "rails", "3.0.9"
+gem "rails", "3.2.11"
 gem "rake", "0.9.2.2"
 gem "jammit"
 gem "rmagick"
@@ -11,6 +11,6 @@ gem "sendgrid"
 gem "mysql2", "< 0.3"
 
 group :development do
-  gem "heroku"
-  gem "win32-open3"
+  gem "heroku", '1.18.3'
+  #gem "win32-open3"
 end
