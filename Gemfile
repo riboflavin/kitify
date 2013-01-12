@@ -8,9 +8,9 @@ gem "carrierwave"
 gem "excon", '~>0.9.2'
 gem "fog", '~>1.1.2'
 gem "sendgrid"
-gem "mysql2", "< 0.3"
+#gem "mysql2", "< 0.3"
 
 group :development do
-  gem "heroku", '1.18.3'
+  #gem "heroku"
   #gem "win32-open3"
 end
