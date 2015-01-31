@@ -3,12 +3,12 @@ default: &DEFAULT
   encoding: utf8
   min_messages: warning
 
+development:
   host: <%=ENV['db_host'] %>
   database: <%=ENV['db_db']%>
   username: <%=ENV['db_username']%>
   password: <%=ENV['db_password']%>
 
-development:
   <<: *DEFAULT
 
 production:
