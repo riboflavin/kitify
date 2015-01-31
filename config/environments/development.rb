@@ -28,5 +28,8 @@ Kitify::Application.configure do
   
   # test addresses for ActionMailer
   config.test_address = ENV['test_email_address']
+
+  # serve static files
+  config.serve_static_files = true
 end
 
