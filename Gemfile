@@ -9,8 +9,3 @@ gem "excon"
 gem "fog"
 gem "sendgrid"
 gem "pg"
-
-group :development do
-  #gem "heroku"
-  #gem "win32-open3"
-end
