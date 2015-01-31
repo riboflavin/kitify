@@ -43,6 +43,6 @@ module Kitify
     config.filter_parameters += [:password]
 
     # Serve static assets
-    config.serve_static_assets = true
+    config.serve_static_files = true
   end
 end
