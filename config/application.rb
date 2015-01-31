@@ -41,5 +41,8 @@ module Kitify
 
     # Configure sensitive parameters which will be filtered from the log file.
     config.filter_parameters += [:password]
+
+    # Serve static assets
+    config.serve_static_assets = true
   end
 end
