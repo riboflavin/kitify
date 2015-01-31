@@ -43,11 +43,14 @@ include ActionView::Helpers::TextHelper
   end
   
   def index
+#    params.permit(:title, :description)
+
     @user = User.where("username = ?", params[:username]).first    
     if (@user == nil)
         render "notfound"
     else
       @kit = Kit.where("slug = ?", params[:slug].downcase).first
+    #raise @kit.inspect
       
       if (@kit == nil)
         render "notfound"
@@ -86,7 +89,7 @@ include ActionView::Helpers::TextHelper
   end
   
   def create
-      params[:title] ||= 'New Kit'
+      params.permit(:title, :description)
 
       user_id = nil
       username = ''
@@ -109,7 +112,8 @@ include ActionView::Helpers::TextHelper
       end
       
       kit = Kit.new
-      kit.title = params[:title]
+      kit.description = params[:description] || 'Enter your kit\'s description here.'
+      kit.title = params[:title] || 'New Kit'
       kit.user_id = user_id
       kit.token = Kit.generate_unique_token!
       kit.generate_slug
@@ -124,6 +128,8 @@ include ActionView::Helpers::TextHelper
   end
   
   def update
+    params.permit(:title, :description)
+
     kit = Kit.where("slug = ? AND token = ?", params[:slug].downcase, params[:token]).first
     
     if (kit == nil)

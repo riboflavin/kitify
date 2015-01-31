@@ -4,7 +4,7 @@ class Kit < ActiveRecord::Base
   has_many :steps, :dependent => :destroy
   has_many :customizations, :dependent => :destroy
   
-  attr_accessible :title, :description, :attachments_attributes
+  has_one :attachments_attributes
   has_many :attachments, :as => :attachable, :dependent => :destroy
 
   validates :published, :inclusion => { :in => %w(unpublished waiting published),

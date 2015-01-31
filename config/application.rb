@@ -6,6 +6,8 @@ require 'rails/all'
 # you've limited to :test, :development, or :production.
 Bundler.require(:default, Rails.env) if defined?(Bundler)
 
+I18n.config.enforce_available_locales = false
+
 module Kitify
   class Application < Rails::Application
     # Settings in config/environments/* take precedence over those specified here.
@@ -35,7 +37,7 @@ module Kitify
 
     # Configure the default encoding used in templates for Ruby 1.9.
     config.encoding = "utf-8"
-    config.action_controller.default_charset = "utf-8"
+    #config.action_controller.default_charset = "utf-8"
 
     # Configure sensitive parameters which will be filtered from the log file.
     config.filter_parameters += [:password]

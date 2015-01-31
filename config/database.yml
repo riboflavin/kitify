@@ -1,5 +1,5 @@
 default: &DEFAULT
-  adapter: mysql2
+  adapter: postgresql
   encoding: utf8
   min_messages: warning
 

@@ -1,3 +1,4 @@
+# encoding: UTF-8
 # This file is auto-generated from the current state of the database. Instead
 # of editing this file, please use the migrations feature of Active Record to
 # incrementally modify your database, and then regenerate this schema definition.
@@ -8,11 +9,14 @@
 # from scratch. The latter is a flawed and unsustainable approach (the more migrations
 # you'll amass, the slower it'll run and the greater likelihood for issues).
 #
-# It's strongly recommended to check this file into your version control system.
+# It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120310194657) do
+ActiveRecord::Schema.define(version: 20120310194657) do
 
-  create_table "attachments", :force => true do |t|
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
+  create_table "attachments", force: :cascade do |t|
     t.string   "file"
     t.integer  "attachable_id"
     t.string   "attachable_type"
@@ -25,7 +29,7 @@ ActiveRecord::Schema.define(:version => 20120310194657) do
     t.string   "secure_token"
   end
 
-  create_table "customizations", :force => true do |t|
+  create_table "customizations", force: :cascade do |t|
     t.string   "property"
     t.string   "cssproperty"
     t.string   "value"
@@ -35,12 +39,12 @@ ActiveRecord::Schema.define(:version => 20120310194657) do
     t.integer  "kit_id"
   end
 
-  create_table "items", :force => true do |t|
+  create_table "items", force: :cascade do |t|
     t.integer  "kit_id"
     t.string   "name"
     t.integer  "quantity"
     t.string   "merchant_url"
-    t.decimal  "price",        :precision => 10, :scale => 0
+    t.decimal  "price"
     t.text     "notes"
     t.datetime "created_at"
     t.datetime "updated_at"
@@ -53,7 +57,7 @@ ActiveRecord::Schema.define(:version => 20120310194657) do
     t.string   "units"
   end
 
-  create_table "kits", :force => true do |t|
+  create_table "kits", force: :cascade do |t|
     t.string   "title"
     t.string   "token"
     t.string   "slug"
@@ -69,7 +73,7 @@ ActiveRecord::Schema.define(:version => 20120310194657) do
     t.string   "description"
   end
 
-  create_table "steps", :force => true do |t|
+  create_table "steps", force: :cascade do |t|
     t.integer  "kit_id"
     t.string   "title"
     t.string   "num"
@@ -79,7 +83,7 @@ ActiveRecord::Schema.define(:version => 20120310194657) do
     t.boolean  "optional"
   end
 
-  create_table "users", :force => true do |t|
+  create_table "users", force: :cascade do |t|
     t.string   "username"
     t.string   "password"
     t.string   "firstname"

@@ -20,6 +20,7 @@ class CustomizationController < ApplicationController
   end
   
   def new
+    params.permit(:customizations, :username)
     user = User.where("username = ?", params[:username]).first
     
     if (user == nil)

@@ -1,15 +1,14 @@
 source 'http://rubygems.org'
 
 gem "rails"
-gem "rake", "0.9.2.2"
-gem "jammit"
-gem "rmagick"
-gem "carrierwave", '0.5.2'
-gem "excon", '~>0.9.2'
-gem "fog", '~>1.1.2'
+gem "rake"
+gem 'jammit', :git => 'git://github.com/documentcloud/jammit.git'
+#gem "rmagick"
+gem "carrierwave"
+gem "excon"
+gem "fog"
 gem "sendgrid"
-gem "mysql2"
-#gem 'activerecord-mysql2-adapter'
+gem "pg"
 
 group :development do
   #gem "heroku"

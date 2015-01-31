@@ -8,7 +8,7 @@ class StepController < ApplicationController
     
       if (kit != nil)
         #todo: num is a string column, this forces sort as if integer
-        steps = Step.where("kit_id = ?", kit.id).order("num + 1")
+        steps = Step.where("kit_id = ?", kit.id).order("num")
         steps.each do |s|
           att = Attachment.where("attachable_id = ? AND pseudo_type = ? AND pseudo_id = ?", kit.id, 'step', s.id).first()
           (s[:url] = att.url) unless att.nil?
